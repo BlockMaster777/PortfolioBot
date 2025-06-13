@@ -1,7 +1,5 @@
 #encoding=utf-8
-"""
-Logic file
-"""
+
 import sqlite3
 from config import db_path
 
@@ -73,8 +71,8 @@ class DBManager:
     
     def insert_project(self, data):
         sql = """INSERT INTO projects
-                     (user_id, project_name, url, status_id)
-                 values (?, ?, ?, ?)"""
+                     (user_id, project_name, description, url, status_id)
+                 values (?, ?, ?, ?, ?)"""
         self.__executemany(sql, data)
     
     
